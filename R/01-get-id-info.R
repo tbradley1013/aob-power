@@ -44,7 +44,8 @@ sample_info <- map_dfr(dw_biofilm_ids$sra_id, function(z){
   output <- output %>% 
     mutate(sra_id = z) %>% 
     select(sra_id, everything())
-})
+}) %>% 
+  mutate_at(vars(parent_name, name), str_to_lower)
 
 beepr::beep(8)
 
