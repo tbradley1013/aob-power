@@ -19,8 +19,35 @@ proj_info <- map_dfr(proj_ids, ~{
     mutate_all(as.character)
 })
 
-temp <- entrez_fetch(db = "sra", id = dw_biofilm_ids$sra_id[1], rettype = "xml")
+fetch_safe <- possibly(entrez_fetch, otherwise = NULL)
 
-temp %>% 
-  read_xml() %>% 
-  xml_find_all(temp, ".//EXPERIMENT_PACKAGE")
+sample_info <- map_dfr(dw_biofilm_ids$sra_id, function(z){
+  fetch_data <- fetch_safe(db = "sra", id = z, rettype = "xml") 
+  
+  if (is.null(fetch_data)) return(NULL)
+  
+  output <- fetch_data %>% 
+    read_xml() %>% 
+    xml_find_all(".//EXPERIMENT_PACKAGE") %>% 
+    xml_children() %>% 
+    map(xml_children) %>% 
+    flatten() %>% 
+    map_dfr(~{
+      tibble(
+        parent_name = xml_parent(.x) %>% xml_name(),
+        # parent_value = xml_parent(.x) %>% xml_text(),
+        name = xml_name(.x),
+        value = xml_text(.x)
+      )
+    })
+  
+  output <- output %>% 
+    mutate(sra_id = z) %>% 
+    select(sra_id, everything())
+})
+
+beepr::beep(8)
+
+
+write_rds(proj_info, "data/proj-info.rds", compress = "gz")
+write_rds(sample_info, "data/sample-info.rds", compress = "gz")
