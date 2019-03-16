@@ -28,8 +28,11 @@ all_singles <- grouped_sam %>%
   filter(sum_count_one == sum_not_null) %>% 
   pull(name)
 
-grouped_sam %>% 
+parsed_sam <- grouped_sam %>% 
   spread(key = name, value = data) %>% 
   mutate_at(vars(!!!rlang::syms(all_singles)), list(~map(., ~.x$value))) %>% 
   mutate_all(list(~map(., ~ifelse(is.null(.x), NA_character_, .x)))) %>% 
   unnest(!!!rlang::syms(c("sra_id", all_singles)), .drop = FALSE)
+
+
+write_rds(parsed_sam, "data/parsed-sample-info.rds")
