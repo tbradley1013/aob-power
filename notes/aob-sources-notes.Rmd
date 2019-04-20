@@ -3,6 +3,7 @@ title: "Notes from Literature Review on AOB power"
 author: "Tyler Bradley"
 date: "4/20/2019"
 output: pdf_document
+bibliography: aob-sources.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +12,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 | Source | Sample Location | Method | AOB Concentration |  Primer |
 | ------ | --------------- | ------ | ----------------- | ------- |
-| [@Hoefel_2005] | WTP and DWDS Bulk Water | MPN and qPCR | | See notes |
+| [@Hoefel_2005] | WTP and DWDS Bulk Water | MPN and qPCR | 3.14e4 +/- 1.47e2 copies/ml| See notes |
+
 
 
 
@@ -26,5 +28,10 @@ Primers used:
   * Universal 16S by PCR -  **27F-1492R** primer set used for first run followed by nested amplification with **357F-GC–518R**
   * AOB specific - 30 cycles using **CTO** primer set was used for the first round. The products of this first round of sampling were used as the template for the nested PCR, which were performed using the **357F-GC–518R** primer set. 
   * NOB specific - **EUB338f-NIT3** was used to detect *Nitrobacter* and **EUB338f-Ntspa0685M** was used to detect *Nitrospira*
+  * qPCR - For universal assay, DNA was extracted from a known amount of PCR products previously amplified using the **27F-1492R** primer. For AOB assay, DNA was extracted from known quantities of PCR products amplified from Nitrosospira multiformis ATCC 25196, using the **amoA1F-amoA2R** primer set.
+  
 
+Results: 
 
+  * They found that AOB had an average concentraion of 3.14e4 +/- 1.47e2 copies/ml and that made up ~5.6% of the bacterial community. 
+  * Looking at the number of active microbes in the system they found the concentration on average to be 3.43e3 copies/ml
