@@ -1,0 +1,30 @@
+---
+title: "Notes from Literature Review on AOB power"
+author: "Tyler Bradley"
+date: "4/20/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+| Source | Sample Location | Method | AOB Concentration |  Primer |
+| ------ | --------------- | ------ | ----------------- | ------- |
+| [@Hoefel_2005] | WTP and DWDS Bulk Water | MPN and qPCR | | See notes |
+
+
+
+# [@Hoefel_2005] 
+
+This study was located in Australia. They used MPN assay and qPCR to measure both total bacteria and AOB in the WTP and in the drinking water system. They did not inspect or sample biofilms in this study. 
+
+This study will likely be helpful when looking at methods used to analyze AOB in samples
+
+Primers used:
+
+  * Universal 16S by PCR -  **27F-1492R** primer set used for first run followed by nested amplification with **357F-GC–518R**
+  * AOB specific - 30 cycles using **CTO** primer set was used for the first round. The products of this first round of sampling were used as the template for the nested PCR, which were performed using the **357F-GC–518R** primer set. 
+  * NOB specific - **EUB338f-NIT3** was used to detect *Nitrobacter* and **EUB338f-Ntspa0685M** was used to detect *Nitrospira*
+
+
