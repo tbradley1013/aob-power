@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = FALSE)
 | Source | Sample Location | Method | AOB Concentration |  Primer |
 | ------ | --------------- | ------ | ----------------- | ------- |
 | [@Hoefel_2005] | WTP and DWDS Bulk Water | MPN and qPCR | 3.14e4 +/- 1.47e2 copies/ml| See notes |
+| [@Wang_2014] | DWDS Bulk Water | qPCR AmoA | 
 
 
 
@@ -35,3 +36,12 @@ Results:
 
   * They found that AOB had an average concentraion of 3.14e4 +/- 1.47e2 copies/ml and that made up ~5.6% of the bacterial community. 
   * Looking at the number of active microbes in the system they found the concentration on average to be 3.43e3 copies/ml
+  
+  
+# [@Wang_2014]
+
+This study was conducted in Pinellas County, Florida. The utility was experience significant nitrification events. They chose to employ a chlorine burn strategy. Samples were taken before, during, and after the chlorine burn to characterize the microbial community and physiochemicla characteristics in the bulk water. 
+
+The study does not give a detailed breakdown of the AOB qPCR results with the exception of a box and whiskers plot that shows the AOB qPCR results for each sampling time range (pre-burn, during burn, after burn, 4 months after burn). 
+
+From this plot, we can see that the median value is roughly 1e3 copies/ml
